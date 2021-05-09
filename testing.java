@@ -1,1 +1,5 @@
-//hello 
+//hello
+
+class BenfordJava {
+    
+}
