@@ -87,40 +87,6 @@ class BenfordJava {
             System.out.println(percentNine);
     
     
-    @Override
-  
-        stage.setTitle("Benford's Law Assignment");
-
-        CategoryAxis xAxis = new CategoryAxis();
-        xAxis.setLabel("Digit");
-        NumberAxis yAxis = new NumberAxis("Percent", 0, 50, 5);
-        BarChart<String, Number> barChart = new BarChart<String, Number>(xAxis, yAxis);
-        barChart.setTitle("Figure 1 - Benford's Law Distribution Leading Digit");
-
-        double percent1 = one / total * 100;
-        double percent2 = two / total * 100;
-        double percent3 = three / total * 100;
-        double percent4 = four / total * 100;
-        double percent5 = five / total * 100;
-        double percent6 = six / total * 100;
-        double percent7 = seven / total * 100;
-        double percent8 = eight / total * 100;
-        double percent9 = nine / total * 100;
-
-        XYChart.Series series = new XYChart.Series();
-        series.getData().add(new XYChart.Data("1", percent1));
-        series.getData().add(new XYChart.Data("2", percent2));
-        series.getData().add(new XYChart.Data("3", percent3));
-        series.getData().add(new XYChart.Data("4", percent4));
-        series.getData().add(new XYChart.Data("5", percent5));
-        series.getData().add(new XYChart.Data("6", percent6));
-        series.getData().add(new XYChart.Data("7", percent7));
-        series.getData().add(new XYChart.Data("8", percent8));
-        series.getData().add(new XYChart.Data("9", percent9));
-
-        Scene scene = new Scene(barChart, 800, 600);
-        barChart.getData().addAll(series);
-        stage.setScene(scene);
-        stage.show();
+   
     }
 }
