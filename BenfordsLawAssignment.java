@@ -8,13 +8,13 @@
 import java.io.File;
 import java.util.Scanner;
 import java.io.PrintWriter;
-//import javafx.application.Application;
-//import javafx.scene.Scene;
-//import javafx.scene.chart.BarChart;
-//import javafx.scene.chart.CategoryAxis;
-//import javafx.scene.chart.NumberAxis;
-//import javafx.scene.chart.XYChart;
-//import javafx.stage.Stage;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 
 class BenfordsLawAssignment{
@@ -90,7 +90,7 @@ class BenfordsLawAssignment{
         * 
         */
 
-      /* @Override
+        @Override
         public static void BarGraph(double[] percent){
         // create file for graph
         File outFile = new File("results.csv");
@@ -125,6 +125,6 @@ class BenfordsLawAssignment{
         stage.setScene(scene);
         stage.show();
         }
-        */
+        
     }
 
