@@ -8,30 +8,22 @@
 import java.io.File;
 import java.util.Scanner;
 import java.io.PrintWriter;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
-import javafx.stage.Stage;
+//import javafx.application.Application;
+//import javafx.scene.Scene;
+//import javafx.scene.chart.BarChart;
+//import javafx.scene.chart.CategoryAxis;
+//import javafx.scene.chart.NumberAxis;
+//import javafx.scene.chart.XYChart;
+//import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 
 class BenfordsLawAssignment{
     public static void main(String[] args) throws Exception {
-
-        // Set vairables to 0 once created
-        double one = 0;
-        double two = 0;
-        double three = 0;
-        double four = 0;
-        double five = 0;
-        double six = 0;
-        double seven = 0;
-        double eight = 0;
-        double nine = 0;
+        double[] count = new double[9];
         double total = 0;
-
+        double percent1 = 0;
+        double percent = 0;
+        
         // import file to read
         File file = new File("sales.csv");
         Scanner scan = new Scanner(file);
@@ -43,57 +35,63 @@ class BenfordsLawAssignment{
             String num = Character.toString(scan.next().charAt(4));
 
             if (num.equals("1")) {
-                one++;
+                count[0]++;
             }
             if (num.equals("2")) {
-                two++;
+                count[1]++;
             }
             if (num.equals("3")) {
-                three++;
+                count[2]++;
             }
             if (num.equals("4")) {
-                four++;
+                count[3]++;
             }
             if (num.equals("5")) {
-                five++;
+                count[4]++;
             }
             if (num.equals("6")) {
-                six++;
+                count[5]++;
             }
             if (num.equals("7")) {
-                seven++;
+                count[6]++;
             }
             if (num.equals("8")) {
-                eight++;
+                count[7]++;
             }
             if (num.equals("9")) {
-                nine++;
+                count[8]++;
             }
         }
     
         
-        // print out the percentages of the occurance of each number, round to one decimal
-        double percentOne = Math.round((one / total * 100) * 10) / 10.0;
-        double percentTwo = Math.round((two / total * 100) * 10) / 10.0;
-        double percentThree = Math.round((three / total * 100) * 10) / 10.0;
-        double percentFour = Math.round((four / total * 100) * 10) / 10.0;
-        double percentFive = Math.round((five / total * 100) * 10) / 10.0;
-        double percentSix = Math.round((six / total * 100) * 10) / 10.0;
-        double percentSeven = Math.round((seven / total * 100) * 10) / 10.0;
-        double percentEight = Math.round((eight / total * 100) * 10) / 10.0;
-        double percentNine = Math.round((nine / total * 100) * 10) / 10.0;
-        
+        //the percentages of the occurance of each number, round to one decimal
+        percent1 = Math.round((count[0] / total * 100) * 10) / 10.0;
+        for (int i = 0; i < 9; i++) {
+            percent = Math.round((count[i] / total * 100) * 10) / 10.0;
+            }
+        fraud(percent1);
+    }
 
+    public static double fraud(double percent1){
+       
+        if(29<percent1 && percent1<32){
+            System.out.println("The data shows that fraud likely did not occur");
+        }else{
+            System.out.println("Fraud has likely occured");
+        }
+       
+        return percent1;
+    }
         /**
-        * Name: start
+        * Name: BarGraph
         * Description: creates bar graph in file 
         *
-        * @param stage - Stage javaFx file, imported in
+        * @param percent - the array that holds the percents of the frequency of numbers
         * 
         */
 
-        @Override
-        public void start(Stage stage){
+      /* @Override
+        public static void BarGraph(double[] percent){
         // create file for graph
         File outFile = new File("results.csv");
         PrintWriter out = new PrintWriter(outFile);
@@ -111,15 +109,15 @@ class BenfordsLawAssignment{
 
         // add bars for each percentage from numbers 1-9
         XYChart.Series series = new XYChart.Series();
-        series.getData().add(new XYChart.Data("1", percentOne));
-        series.getData().add(new XYChart.Data("2", percentTwo));
-        series.getData().add(new XYChart.Data("3", percentThree));
-        series.getData().add(new XYChart.Data("4", percentFour));
-        series.getData().add(new XYChart.Data("5", percentFive));
-        series.getData().add(new XYChart.Data("6", percentSix));
-        series.getData().add(new XYChart.Data("7", percentSeven));
-        series.getData().add(new XYChart.Data("8", percentEight));
-        series.getData().add(new XYChart.Data("9", percentNine));
+        series.getData().add(new XYChart.Data("1", percent[0]));
+        series.getData().add(new XYChart.Data("2", percent[1]));
+        series.getData().add(new XYChart.Data("3", percent[2]));
+        series.getData().add(new XYChart.Data("4", percent[3]));
+        series.getData().add(new XYChart.Data("5", percent[4]));
+        series.getData().add(new XYChart.Data("6", percent[5]));
+        series.getData().add(new XYChart.Data("7", percent[6]));
+        series.getData().add(new XYChart.Data("8", percent[7]));
+        series.getData().add(new XYChart.Data("9", percent[8]));
 
         // this is how big the bar graph will be in the file
         Scene scene = new Scene(barChart, 800, 600);
@@ -127,5 +125,6 @@ class BenfordsLawAssignment{
         stage.setScene(scene);
         stage.show();
         }
+        */
     }
-}
+
