@@ -19,6 +19,7 @@ import java.io.FileNotFoundException;
 
 class BenfordsLawAssignment{
     public static void main(String[] args) throws Exception {
+        //hold the numbers in an array
         double[] count = new double[9];
         double total = 0;
         double percent1 = 0;
